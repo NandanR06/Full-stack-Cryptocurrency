@@ -1,0 +1,60 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    background-color: rgba(65, 65, 255, 0.845);
+    width: 100%;
+    z-index: 1;
+    text-decoration: none;
+    border-bottom: 1px solid black;
+    box-shadow: 0px 0px 10px 0px;
+   
+}
+.name{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.currency{
+    background-color: transparent;
+    /* color: white; */
+    border: 1px solid white ;
+    outline: none;
+    border-radius: 6px;
+    height: 30px;
+    padding: 0px 10px;
+}
+.todo{
+    cursor: pointer;
+    color: rgb(50, 49, 49);
+}
+.log{
+   
+    text-decoration: none;
+    color: white;
+}
+
+.path1 {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    font-size: 25px;
+    font-weight: bolder;
+    color: rgb(50, 49, 49);
+    text-decoration: none;
+   
+}
+.path2 {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bolder;
+    color: white;
+    list-style: none;
+    gap: 60px;
+    cursor: pointer;
+    text-decoration: none;
+}
+Link{
+    text-decoration: none;
+}

@@ -1,0 +1,108 @@
+.protected{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 180vh;
+    width: 100%;
+    background:linear-gradient(rgba(0, 0, 0, 0.902),rgba(35, 35, 236, 0.852),rgba(0, 0, 0, 0.902));
+
+}
+.hero{
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+.hero h1{
+    color: white;
+    font-size: max(3vw,36px);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 150px;
+}
+.hero p{
+    line-height: 1.5;
+    text-align: center;
+    margin-top: 20px;
+    width: 65%;
+    text-align: center;
+    margin-bottom: 20px;
+
+}
+.hero form{
+    padding: 8px auto;
+    width:40%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap:10px;
+    font-size: 10px;
+    background-color: white;
+    border-radius: 5px;
+    padding:0px  10px;
+}
+
+.hero input{
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 15px;
+}
+.hero button{
+    border: none;
+    background-color: blueviolet;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.crypto-table{
+    max-width: 800px;
+    width:50%;
+    margin: auto;
+    background: linear-gradient(rgb(16, 42, 192), rgb(73, 113, 168));
+    border-radius: 8px 8px 0px 0px ;
+    padding: 0px 30px;
+    margin-top: 40px;
+    color: white;
+}
+.table-layout{
+    display: grid;
+    grid-template-columns: 0.5fr 3fr 1fr 2fr 1.5fr;
+    padding: 8px 0px;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+.table-layout1{
+    display: grid;
+    grid-template-columns: 0.5fr 3fr 1fr 2fr 1.5fr;
+    padding: 8px 0px;
+    align-items: center;
+    border-bottom: 1px solid black;
+} 
+
+.Link{
+    text-decoration: none;
+    color: white;
+}
+
+.table-layout1 div{
+display: flex;
+align-items: center;
+gap:10px;
+text-decoration: none;
+}
+.table-layout:last-child{
+    border-radius: none;
+    border: none;
+}
+.green{
+    color: rgb(94, 236, 94);
+}
+.red{
+    color: rgba(178, 12, 12, 0.776);
+}
