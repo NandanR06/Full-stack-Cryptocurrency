@@ -1,8 +1,8 @@
 
 import React, { createContext, useContext, useEffect, useState } from 'react';
+import axios from 'axios'
 
 export const AuthContext = createContext();
-// export const api = createContext();
 export const useAuth = () => useContext(AuthContext);
 
 export const AuthProvider = ({ children }) => {
@@ -12,27 +12,17 @@ export const AuthProvider = ({ children }) => {
     name: "usd",
     Symbol: "$"
   })
-  const fetchAllCoin = async () => {
-    const options = {
-      method: 'GET',
-      headers: {
-        accept: 'application/json',
-        'x-cg-pro-api-key': '  CG-ecZCniDj5NrUNtthfR3HCqbN	'
-      }
-    };
 
-    fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd`, options)
-      .then(res => res.json())
-      .then(res => {
-        setAllCoin(res);
-        console.log(res)
-      }
-      )
-      .catch(err => console.error(err));
+  const fetchAllCoin = async () => {
+    axios.get(`http://localhost:5000/login`)
+    .then((res)=>{
+       setAllCoin(res.data)
+      console.log(res.data)
+    })
+    .catch(err=>console.log(err))
   }
   useEffect(() => {
     fetchAllCoin();
-
   }, [currency])
 
 

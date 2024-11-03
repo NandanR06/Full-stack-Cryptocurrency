@@ -1,5 +1,7 @@
 import { Router } from "express";
 import cryptoCurrency from '../Models/Database.js'
+import axios from 'axios'
+
 import bcript from 'bcrypt'
 import jwt from 'jsonwebtoken'
 
@@ -13,14 +15,14 @@ router.post('/Register', async (req, res) => {
     const hashPassword = await bcript.hash(password, 10);
     try {
         if (userExist) {
-            return  res.json({ exists: true });
+            return res.json({ exists: true });
         }
-        else{
+        else {
             const data = new cryptoCurrency({ username: username, password: hashPassword })
             const save = await data.save();
             res.status(200).json(save);
         }
-        
+
     } catch (error) {
         res.status(500).json({ message: error })
     }
@@ -38,7 +40,7 @@ router.post('/Login', async (req, res) => {
         if (!psw) {
             return res.status(400).json({ message: "invalid password" });
         }
-        const token = jwt.sign({ _id: userExist._id }, process.env.JWT_PASSWORD,  { expiresIn: '1m' } );
+        const token = jwt.sign({ _id: userExist._id }, process.env.JWT_PASSWORD, { expiresIn: '1m' });
         res.status(200).json({ token: token })
 
     } catch (error) {
@@ -59,4 +61,61 @@ router.get('/', (req, res) => {
 });
 
 
+router.get('/coin/:id', async (req, res) => {
+    const coinId = req.params.id;
+    const options1 = {
+        method: 'GET',
+        url: `https://api.coingecko.com/api/v3/coins/${coinId}`,
+        headers: {
+            accept: 'application/json',
+            'x-cg-pro-api-key': 'CG-cmPC3gxeJkbcDMLdvp7Y8g2w'
+        }
+    };
+
+    const options2 = {
+        method: 'GET',
+        url: `https://api.coingecko.com/api/v3/coins/${coinId}/market_chart?vs_currency=usd&days=10`,
+        headers: { accept: 'application/json', 'x-cg-pro-api-key': 'CG-cmPC3gxeJkbcDMLdvp7Y8g2w' }
+    };
+
+    try {
+        const [coinInof, days] = await Promise.all([
+         axios.request(options1),
+         axios.request(options2)
+        ]);
+        const combainData = {
+            info1: coinInof.data,
+            info2: days.data
+        }
+        res.json(coinInof.data)
+    } catch (error) {
+        res.status(400).json({ message: error.message });
+    }
+});
+
+
+router.get('/login', async (req, res) => {
+    const options = {
+        method: 'GET',
+        url: 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd',
+        headers: { accept: 'application/json', 'x-cg-pro-api-key': 'CG-cmPC3gxeJkbcDMLdvp7Y8g2w' }
+    };
+    try {
+        const responce = await axios.request(options);
+        res.json(responce.data)
+
+
+    } catch (error) {
+
+        res.status(500).json({ message: 'Error fetching data from CoinGecko' });
+    }
+
+})
+
 export default router;
+
+
+
+
+
+

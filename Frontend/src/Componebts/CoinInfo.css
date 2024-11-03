@@ -1,0 +1,29 @@
+.coin{
+    background:linear-gradient(rgba(0, 0, 0, 0.902),rgba(35, 35, 236, 0.852),rgba(0, 0, 0, 0.902));
+    height: 100vh;
+}
+.spin{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:linear-gradient(rgba(0, 0, 0, 0.902),rgba(35, 35, 236, 0.852),rgba(0, 0, 0, 0.902));
+    height: 100vh;
+    width: 100vw;
+    flex-direction: column;
+    gap: 400px;
+}
+
+.spinner{
+ width: 70px;
+ height: 70px;
+ border: 8px solid rgba(0, 0, 0, 0.308);
+ border-top:8px solid  rgb(153, 153, 156) ;
+ border-radius: 50%;
+animation: rotate infinite 2s linear forwards;
+}
+
+@keyframes rotate{
+    100%{
+        transform: rotate(360deg);
+    }
+}

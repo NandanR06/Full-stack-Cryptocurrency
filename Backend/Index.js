@@ -6,8 +6,7 @@ import mongoose from 'mongoose';
 
 const app = express();
 app.use(express.json());
-// app.use(cors());
-
+ app.use(cors());
 mongoose.connect(process.env.DATABASE_URL).
     then(res => console.log('database connected')).
     catch(err => console.log(err));
