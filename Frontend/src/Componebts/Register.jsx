@@ -4,7 +4,7 @@ import './Register.css'
 import { useNavigate } from 'react-router-dom';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 
-const url = "http://localhost:5000"
+const url = "https://cryptocurrency-3fh8.onrender.com"
 
 
 export default function Register() {
