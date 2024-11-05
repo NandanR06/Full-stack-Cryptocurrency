@@ -1,7 +1,7 @@
 
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import axios from 'axios'
-const url = "http://localhost:5000"
+const url = "https://cryptocurrency-3fh8.onrender.com"
 export const AuthContext = createContext();
 export const useAuth = () => useContext(AuthContext);
 
