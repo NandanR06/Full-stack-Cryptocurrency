@@ -39,7 +39,7 @@ const submitInfo= async(e)=>{
         localStorage.removeItem('authToken');
         window.location.reload();
         history('/');
-      }, 80000);
+      },180000);
       return () => clearTimeout(logout);
     }
 
