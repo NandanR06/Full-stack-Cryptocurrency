@@ -4,7 +4,7 @@ import { useAuth } from '../AutoCotext';
 import axios from 'axios'
 import './CoinInfo.css'
 import Footer from './Footer';
-const url = 'http://localhost:5000';
+const url = 'https://cryptocurrency-3fh8.onrender.com';
 
 export default function CoinInfo() {
   const { id } = useParams();
