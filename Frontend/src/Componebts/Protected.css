@@ -35,11 +35,11 @@
 }
 .hero form{
     padding: 8px auto;
-    width:40%;
+    width:50%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap:10px;
+    gap:5px;
     font-size: 10px;
     background-color: white;
     border-radius: 5px;
@@ -47,17 +47,20 @@
 }
 
 .hero input{
-    flex: 1;
+    flex:1 ;
     border: none;
     outline: none;
     font-size: 15px;
+    /* width: 600px; */
 }
 .hero button{
     border: none;
     background-color: blueviolet;
     color: white;
-    padding: 10px 10px;
-    margin-right: 10;
+    padding: 8px 10px;
+    margin-right: 10px;
+    margin-left: -70px;
+
     cursor: pointer;
     border-radius: 5px;
 }
