@@ -1,7 +1,7 @@
 import { Router } from "express";
 import cryptoCurrency from '../Models/Database.js'
 import axios from 'axios'
-import bcript from 'bcrypt'
+import bcript from 'bcryptjs'
 import jwt from 'jsonwebtoken'
 
 
