@@ -1,7 +1,7 @@
 
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import axios from 'axios'
-
+const url = "http://localhost:5000"
 export const AuthContext = createContext();
 export const useAuth = () => useContext(AuthContext);
 
@@ -14,7 +14,7 @@ export const AuthProvider = ({ children }) => {
   })
 
   const fetchAllCoin = async () => {
-    axios.get(`http://localhost:5000/login`)
+    axios.get(`${url}/login`)
     .then((res)=>{
        setAllCoin(res.data)
       console.log(res.data)

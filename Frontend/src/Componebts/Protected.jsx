@@ -39,11 +39,24 @@ const submitInfo= async(e)=>{
         localStorage.removeItem('authToken');
         window.location.reload();
         history('/');
-      }, 300000);
+      }, 80000);
       return () => clearTimeout(logout);
     }
+
+    
   }, [history]);
 
+  useEffect(()=>{
+    const disableRightClick=(e)=>{
+      e.preventDefault();
+    }
+    document.addEventListener("contextmenu",disableRightClick);
+    return()=>{document.removeEventListener('contextmenu',disableRightClick)};
+  },[])
+
+
+
+  
   if (!token) {
     return <Navigate to={"/"} />
   }

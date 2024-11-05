@@ -4,6 +4,7 @@ import { useAuth } from '../AutoCotext';
 import axios from 'axios'
 import './CoinInfo.css'
 import Footer from './Footer';
+const url = 'http://localhost:5000';
 
 export default function CoinInfo() {
   const { id } = useParams();
@@ -12,7 +13,7 @@ export default function CoinInfo() {
   const { currency } = useAuth();
 
   const fetchCoin = async () => {
-    await axios.get(`http://localhost:5000/coin/${id}`)
+    await axios.get(`${url}/coin/${id}`)
       .then((res) => {
         console.log(res.data);
         setCoinData(res.data);
@@ -22,7 +23,7 @@ export default function CoinInfo() {
 
 
   const fetchHistoricalData = async () => {
-    await axios.get(`http://localhost:5000/coin/${id}`)
+    await axios.get(`${url}/coin/${id}`)
       .then((res) => {
         console.log(res.data);
         SetHistoricalData(res.data);
@@ -43,9 +44,9 @@ export default function CoinInfo() {
     return (
       <div className='coin' >
 
-        {/* <img src={coinData.image.large} alt='coin-image' />
-        <p>{coinData.name}({coinData.symbol.toUpperCase()})</p> */}
-        <pre>{JSON.stringify(coinData.info1, null, 2)}</pre>
+         <img src={coinData.info1.image.large} alt='coin-image' />
+        <p>{coinData.name}({coinData.info1.symbol.toUpperCase()})</p> 
+        {/* <pre>{JSON.stringify(coinData.info1, null, 2)}</pre> */}
         <Footer />
       </div>
     )

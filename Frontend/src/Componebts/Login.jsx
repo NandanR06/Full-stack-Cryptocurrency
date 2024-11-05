@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios';
 import { useAuth } from '../AutoCotext.jsx';
@@ -36,6 +36,14 @@ export default function Login() {
       })
       .catch(err => alert("please register"))
   }
+
+  // useEffect(()=>{
+  //   const disableRightClick=(e)=>{
+  //     e.preventDefault();
+  //   }
+  //    document.addEventListener("contextmenu",disableRightClick);
+  //    return()=>{document.removeEventListener('contextmenu',disableRightClick)};
+  // },[])
   return (
     <div className="login">
       <div className="container2">

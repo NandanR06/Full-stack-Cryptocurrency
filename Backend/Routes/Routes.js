@@ -1,7 +1,6 @@
 import { Router } from "express";
 import cryptoCurrency from '../Models/Database.js'
 import axios from 'axios'
-
 import bcript from 'bcrypt'
 import jwt from 'jsonwebtoken'
 
@@ -87,12 +86,11 @@ router.get('/coin/:id', async (req, res) => {
             info1: coinInof.data,
             info2: days.data
         }
-        res.json(coinInof.data)
+        res.json(combainData)
     } catch (error) {
         res.status(400).json({ message: error.message });
     }
 });
-
 
 router.get('/login', async (req, res) => {
     const options = {
@@ -104,9 +102,7 @@ router.get('/login', async (req, res) => {
         const responce = await axios.request(options);
         res.json(responce.data)
 
-
     } catch (error) {
-
         res.status(500).json({ message: 'Error fetching data from CoinGecko' });
     }
 
