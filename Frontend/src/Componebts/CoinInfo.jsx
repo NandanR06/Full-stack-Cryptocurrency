@@ -40,24 +40,24 @@ export default function CoinInfo() {
   }, [currency])
 
 
-  // if (coinData) {
+  if (coinData) {
     return (
       <div className='coin' >
 
-         {/* <img src={coinData.info1.image.large} alt='coin-image' /> */}
-        <p>{coinData}</p> 
+         <img src={coinData.info1.image.large} alt='coin-image' />
+        <p>{coinData.name}({coinData.info1.symbol.toUpperCase()})</p> 
         {/* <pre>{JSON.stringify(coinData.info1, null, 2)}</pre> */}
         <Footer />
       </div>
     )
-  // }
-  // else {
-  //   return (
-  //     <div className="spin">
-  //       <div className="spinner"></div>
-  //     </div>
-  //   )
-  // }
+   }
+  else {
+    return (
+      <div className="spin">
+        <div className="spinner"></div>
+      </div>
+    )
+  }
 
 
 }

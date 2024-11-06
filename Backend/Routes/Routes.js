@@ -80,7 +80,7 @@ router.get('/coin/:id', async (req, res) => {
     try {
         const [coinInof, days] = await Promise.all([
          axios.get(`https://api.coingecko.com/api/v3/coins/${coinId}`),
-         axios.request(`https://api.coingecko.com/api/v3/coins/${coinId}/market_chart?vs_currency=usd&days=10`)
+         axios.get(`https://api.coingecko.com/api/v3/coins/${coinId}/market_chart?vs_currency=usd&days=10`)
         ]);
         const combainData = {
             info1: coinInof.data,
@@ -99,7 +99,7 @@ router.get('/login', async (req, res) => {
         headers: { accept: 'application/json', 'x-cg-pro-api-key': 'CG-cmPC3gxeJkbcDMLdvp7Y8g2w' }
     };
     try {
-        const responce = await axios.request(options);
+        const responce = await axios.get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd');
         res.json(responce.data)
 
     } catch (error) {
