@@ -23,10 +23,6 @@ export default function CoinInfo() {
       .catch((err) => { console.error(err) })
   }
 
-
-  
-
-
   useEffect(() => {
     fetchCoin()
   }, [currency])
@@ -35,16 +31,42 @@ export default function CoinInfo() {
   if (coinData) {
     return (
       <div className='coin' >
-         <img src={coinData.image.large} alt='coin-image' />
-        <p>{coinData.name}({coinData.symbol.toUpperCase()})</p> 
+        <img src={coinData.image.large} alt='coin-image' />
+        <p  className='coin-name'>{coinData.name}  ({coinData.symbol.toUpperCase()})</p>
 
-        <div className="chart-info">
-          <Linechart historicalData={historicalData}/>
+        <div className="chart-data">
+          <Linechart historicalData={historicalData} />
+        </div>
+
+        <div className="coin-info">
+          <ul>
+            <li>Crypto Market Rank</li>
+            <li>{coinData.market_cap_rank}</li>
+          </ul>
+
+          <ul>
+            <li>Crypto Market Rank</li>
+            <li>{currency.Symbol}{coinData.market_data.current_price[currency.name].toLocaleString()}</li>
+          </ul>
+          <ul>
+            <li>Market Cap</li>
+            <li>{currency.Symbol}{coinData.market_data.market_cap[currency.name].toLocaleString()}</li>
+          </ul>
+
+          <ul>
+            <li>24 Hour High</li>
+            <li>{currency.Symbol}{coinData.market_data.high_24h[currency.name].toLocaleString()}</li>
+          </ul>
+
+          <ul>
+            <li>24 Hour Low</li>
+            <li>{currency.Symbol}{coinData.market_data.low_24h[currency.name].toLocaleString()}</li>
+          </ul>
         </div>
         <Footer />
       </div>
     )
-   }
+  }
   else {
     return (
       <div className="spin">

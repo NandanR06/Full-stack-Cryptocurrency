@@ -1,7 +1,25 @@
 .coin{
     background:linear-gradient(rgba(0, 0, 0, 0.902),rgba(35, 35, 236, 0.852),rgba(0, 0, 0, 0.902));
     height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
+
+.coin img{
+    margin-top: 70px;
+    width: 15vh;
+}
+.coin-name{
+    font-size: 40px;
+    color: white;
+    margin-bottom: 20px;
+}
+.chart-data{
+    width: 900px;
+}
+
 .spin{
     display: flex;
     align-items: center;
