@@ -27,6 +27,14 @@ export default function CoinInfo() {
     fetchCoin()
   }, [currency])
 
+  useEffect(()=>{
+    const disableRightClick=(e)=>{
+      e.preventDefault();
+    }
+    document.addEventListener("contextmenu",disableRightClick);
+    return()=>{document.removeEventListener('contextmenu',disableRightClick)};
+  },[])
+
 
   if (coinData) {
     return (

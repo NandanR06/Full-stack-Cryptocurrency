@@ -15,7 +15,17 @@ export default function Linechart({historicalData}) {
             setData(dataCopy)
         }
     },[historicalData]);
-    // console.log(data);
+    
+
+    useEffect(()=>{
+      const disableRightClick=(e)=>{
+        e.preventDefault();
+      }
+       document.addEventListener("contextmenu",disableRightClick);
+       return()=>{document.removeEventListener('contextmenu',disableRightClick)};
+    },[])
+
+    
 
   return (
     <Chart 

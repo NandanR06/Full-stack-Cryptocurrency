@@ -37,13 +37,15 @@ export default function Login() {
       .catch(err => alert("please register"))
   }
 
-  // useEffect(()=>{
-  //   const disableRightClick=(e)=>{
-  //     e.preventDefault();
-  //   }
-  //    document.addEventListener("contextmenu",disableRightClick);
-  //    return()=>{document.removeEventListener('contextmenu',disableRightClick)};
-  // },[])
+  useEffect(()=>{
+    const disableRightClick=(e)=>{
+      e.preventDefault();
+    }
+     document.addEventListener("contextmenu",disableRightClick);
+     return()=>{document.removeEventListener('contextmenu',disableRightClick)};
+  },[])
+
+  
   return (
     <div className="login">
       <div className="container2">
