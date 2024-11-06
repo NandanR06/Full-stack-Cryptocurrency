@@ -1,5 +1,5 @@
 import React, { useEffect ,useState} from 'react'
-import chart from 'react-google-charts'
+import Chart from 'react-google-charts';
 
 export default function Linechart({historicalData}) {
     const [data ,setData] = useState([['data','prices']]);
@@ -15,7 +15,7 @@ export default function Linechart({historicalData}) {
     },[historicalData]);
 
   return (
-    <chart  
+    <Chart 
     chartType='LineChart'
     data = {data}
     height="100%"
