@@ -1,6 +1,6 @@
 .coin{
     background:linear-gradient(rgba(0, 0, 0, 0.902),rgba(35, 35, 236, 0.852),rgba(0, 0, 0, 0.902));
-    height: 100vh;
+    height: 150vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -8,16 +8,18 @@
 }
 
 .coin img{
-    margin-top: 70px;
+    margin-top:-1vh;
     width: 15vh;
 }
 .coin-name{
     font-size: 40px;
     color: white;
-    margin-bottom: 20px;
+    margin: 10px 0px;
 }
 .chart-data{
     width: 900px;
+    margin-bottom: 60px;
+    height: 600px;
 }
 
 .spin{
@@ -29,6 +31,22 @@
     width: 100vw;
     flex-direction: column;
     gap: 400px;
+}
+.coin-info ul{
+    margin-top: 20px;
+    display: flex;
+    color: white;
+    align-items: center;
+    justify-content: space-between;
+    /* flex-direction: column; */
+    gap: 500px;
+    font-size: 18px;
+    max-width: 900px;
+   border-bottom: 2px solid black;
+    /* background-color: red; */
+}
+.coin-info ul li{
+    
 }
 
 .spinner{
