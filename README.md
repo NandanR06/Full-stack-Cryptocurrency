@@ -12,6 +12,9 @@ Cryptocurrency Tracker is designed to bring essential market data to both casual
 ![Cryptocurrency Tracker Screenshot](Frontend/src/asserts/protected.png)
 
 ![Cryptocurrency Tracker Screenshot](Frontend/src/asserts/crypto-data.png)
+![Cryptocurrency Tracker Screenshot](Frontend/src/asserts/data-1.png)
+
+![Cryptocurrency Tracker Screenshot](Frontend/src/asserts/data.png)
 
 
 ## ✨ Key Features
