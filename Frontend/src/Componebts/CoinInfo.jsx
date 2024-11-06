@@ -63,7 +63,7 @@ export default function CoinInfo() {
             <li>{currency.Symbol}{coinData.market_data.low_24h[currency.name].toLocaleString()}</li>
           </ul>
         </div>
-        <Footer />
+        
       </div>
     )
   }
