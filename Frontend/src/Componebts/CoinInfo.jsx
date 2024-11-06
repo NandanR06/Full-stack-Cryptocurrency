@@ -4,6 +4,7 @@ import { useAuth } from '../AutoCotext';
 import axios from 'axios'
 import './CoinInfo.css'
 import Footer from './Footer';
+import Linechart from './Linechart';
 const url = 'https://cryptocurrency-3fh8.onrender.com';
 
 export default function CoinInfo() {
@@ -16,37 +17,30 @@ export default function CoinInfo() {
     await axios.get(`${url}/coin/${id}`)
       .then((res) => {
         console.log(res.data);
-        setCoinData(res.data);
+        setCoinData(res.data.info1);
+        SetHistoricalData(res.data.info2);
       })
       .catch((err) => { console.error(err) })
   }
 
 
-  const fetchHistoricalData = async () => {
-    await axios.get(`${url}/coin/${id}`)
-      .then((res) => {
-        console.log(res.data);
-        SetHistoricalData(res.data);
-      })
-      .catch(err => { console.log(err) })
-
-
-  }
+  
 
 
   useEffect(() => {
     fetchCoin()
-    // fetchHistoricalData();
   }, [currency])
 
 
   if (coinData) {
     return (
       <div className='coin' >
-
          <img src={coinData.info1.image.large} alt='coin-image' />
         <p>{coinData.name}({coinData.info1.symbol.toUpperCase()})</p> 
-        {/* <pre>{JSON.stringify(coinData.info1, null, 2)}</pre> */}
+
+        <div className="chart-info">
+          <Linechart historicalData={historicalData}/>
+        </div>
         <Footer />
       </div>
     )
