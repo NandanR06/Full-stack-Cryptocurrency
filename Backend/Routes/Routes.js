@@ -79,8 +79,8 @@ router.get('/coin/:id', async (req, res) => {
 
     try {
         const [coinInof, days] = await Promise.all([
-         axios.request(options1),
-         axios.request(options2)
+         axios.get(`https://api.coingecko.com/api/v3/coins/${coinId}`),
+         axios.request(`https://api.coingecko.com/api/v3/coins/${coinId}/market_chart?vs_currency=usd&days=10`)
         ]);
         const combainData = {
             info1: coinInof.data,
