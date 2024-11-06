@@ -35,8 +35,8 @@ export default function CoinInfo() {
   if (coinData) {
     return (
       <div className='coin' >
-         <img src={coinData.info1.image.large} alt='coin-image' />
-        <p>{coinData.name}({coinData.info1.symbol.toUpperCase()})</p> 
+         <img src={coinData.image.large} alt='coin-image' />
+        <p>{coinData.name}({coinData.symbol.toUpperCase()})</p> 
 
         <div className="chart-info">
           <Linechart historicalData={historicalData}/>
