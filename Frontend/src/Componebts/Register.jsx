@@ -1,4 +1,4 @@
-import React, { useState ,useEffect} from 'react'
+import React, { useState } from 'react'
 import axios from 'axios'
 import './Register.css'
 import { useNavigate } from 'react-router-dom';
@@ -55,15 +55,7 @@ export default function Register() {
     }
   }
 
-  useEffect(()=>{
-    const disableRightClick=(e)=>{
-      e.preventDefault();
-    }
-     document.addEventListener("contextmenu",disableRightClick);
-     return()=>{document.removeEventListener('contextmenu',disableRightClick)};
-  },[])
-
-
+ 
   
   return (
     <div className='register'>
