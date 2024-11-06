@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect ,useState} from 'react'
 import chart from 'react-google-charts'
 
 export default function Linechart({historicalData}) {
